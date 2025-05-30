@@ -1,0 +1,32 @@
+options = print("What do you want to convert?")
+a = ("Option 1: Decimal to Binary:  \nOption 2: Binary to Decimal: ")
+select_options = int(input(a + "\nEnter Your Choice (1 or 2): "))
+
+if select_options > 2:
+    print("Invalid Option")
+
+# Decimal to Binary
+if select_options == 1:
+    decimal = int(input("Enter Decimal Number: "))
+    binary = ""
+    while decimal > 0:
+        decimal = decimal//2
+        remainder = decimal%2
+        binary = str(remainder) + binary
+    if not binary:
+        print(0)
+    print("Binary is:", binary)
+
+
+# Binary to Decimal
+if select_options == 2:
+    binary = input("Enter any Binary Number: ")
+    if not all(d in "01" for d in binary):
+        print("Please enter valid number")
+    else:
+        decimal = 0
+        for digit in binary:
+            decimal = decimal*2 + int(digit)
+        print ("Decimal:", decimal)
+
+cont = input("Press enter for exit")
