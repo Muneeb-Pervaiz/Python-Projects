@@ -1,11 +1,11 @@
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 
-text = input("Write a line")
+text = input("Write a line: ")
 wordcloud = WordCloud(width=800, height=400, stopwords=set() ,background_color='white').generate(text)
 
 plt.figure(figsize=(10, 5))
 plt.imshow(wordcloud, interpolation='bilinear')
-plt.axis('off')  
+plt.axis('off') 
 plt.title("WordCloud")
 plt.show()
